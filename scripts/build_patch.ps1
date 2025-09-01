@@ -30,6 +30,8 @@ New-Item -ItemType Directory -Path "out\preprocessing\" -Force | Out-Null
 Copy-Item -Path "files\md5.txt" -Destination "out\md5.txt" -Recurse -Force
 Copy-Item -Path "files\preprocessing\*" -Destination "out\preprocessing" -Recurse -Force
 
+python scripts\decompress_arm9.py
+
 python scripts\edit_banner.py
 
 $versions = @("normal", "dlp")
@@ -51,6 +53,8 @@ foreach ($version in $versions) {
     python scripts\patch_file_size.py
   }
 
+  python scripts\compile_arm9_patch.py
+  python scripts\recompress_arm9.py
   python scripts\create_xdelta.py
 
   Compress-Archive -Path "out/xdelta/", "out/preprocessing/", "out/banner.bin", "out/md5.txt" -Destination "patch-ds.zip" -Force

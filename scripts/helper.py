@@ -14,12 +14,16 @@ DIR_DATA = "data/data"
 DIR_FONT_FILES = "files/fonts"
 DIR_UNPACKED_FILES = "unpacked"
 DIR_TEMP_IMPORT = "temp/import"
+DIR_TEMP_DECOMPRESSED = "temp/decompressed"
+DIR_TEMP_DECOMPRESSED_MODIFIED = "temp/decompressed_mod"
 DIR_TEMP_OUT = "temp/out"
 
 CHAR_TABLE_PATH = "out/char_table.json"
 BANNER_PATH = "original_files/banner.bin"
 BANNER_OUT_PATH = "out/banner.bin"
+SYMBOL_OUT_PATH = "out/symbols.txt"
 
+ARM9_COMPRESSED_SIZE_OFFSET = 0xB60
 TRASH_PATTERN = re.compile(r"^[\-\. ]*$", re.DOTALL)
 CONTROL_PATTERN = re.compile(r"\^[0-9A-Za-z]|%[ds]|~[CFcf][0-9\-]+")
 KANA_PATTERN = re.compile(r"[\u3040-\u309F\u30A0-\u30FF]+")
